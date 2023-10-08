@@ -10,9 +10,6 @@ This script will take a list of organization names from a .csv file with one org
 ## getOrgList.py
 This script will retrieve a list of all your organizations from your Snyk portal along with the slug for each organization. It will then create a .csv file with each entry on a separate line. This is useful for integrating Snyk with AD for custom role mapping, especially when adding new developers to SSO. This ensures they are automatically added to specific applications. Find more info here: [Snyk Custom Mapping](https://docs.snyk.io/enterprise-setup/using-single-sign-on-sso-for-authentication/custom-mapping-option).
 
-## Configure config.py
-First rename the config-tempalte.py to config.py and add your groupId, sourceOrgId, and Authorization tokens. The groupId is your group id value that can be found by navigating to your main group and on the URL https://app.snyk.io/group/{groupId} you can see the value. Then for the sourceOrgId is the organization you will be using to clone all the configurations this is best practive when setting up Snyk to have a default organization with all your configurations in one organizations to easily clone to other organizations. In the default organization go to settings and you will see organization id and this will be the key for sourceOrgId on your config file. For the Authorization token go to your account setting on the botton left side of the screen and click on your account then account settings and then under API Token click 'click to show' to view token for Authorization Token on the config file. 
-
 
 ## Configuration Setup Instructions
 
