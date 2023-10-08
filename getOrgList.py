@@ -1,7 +1,7 @@
 import requests
 import config
-import csv
 import urllib3
+
 
 # This line handle the ssl certificate error. 
 urllib3.disable_warnings()
@@ -18,8 +18,7 @@ headers = {
 
 # Parameters pass on the URL. 
 parameters = {'version': restVersion['restVersion'], 'group_id': ids['groupId']}
-# print(parameters)
-# other
+
 # The variable for the URL. 
 # https://api.snyk.io/rest/orgs?version=2023-09-20&group_id={id}
 url = 'https://api.snyk.io/rest/orgs'
@@ -28,9 +27,18 @@ url = 'https://api.snyk.io/rest/orgs'
 # print(url, values, headers)
 request = requests.get(url, params=parameters, headers=headers, verify=False)
 
-size = len(request.json()['data'])
-print(size)
-print(type(request.json()['data']))
+def write_to_csv():
+    with open('nameSlug.csv','w') as file:
+        data = request.json()
+        items = data['data']
+        for item in items:
+            name = item['attributes']['name']
+            slug = item['attributes']['slug']
+            file.write(name + ',' + slug)
+            file.write('\n')
+  
+
+write_to_csv()
 
 
-print(request.json()['data'][1]['attributes']['slug'])
+
