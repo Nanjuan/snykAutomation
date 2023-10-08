@@ -1,6 +1,6 @@
 # snykAutomation
 
-This repo is where I'll be posting my Snyk tool automation scripts that can be used to automate tasks inside Snyk.
+This repo is where I'll be posting my Snyk automation scripts that can be used to automate tasks inside Snyk.
 
 ## CreateNewOrg.py
 This script will take a list of organization names from a .csv file with one organization per line, as shown in the example file `organization-names.csv`. The script will then create new organizations in the group selected in the config file. For configuration details, refer to the config file section.
